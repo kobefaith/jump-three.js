@@ -36,22 +36,6 @@
         group.add(cube);
       }
       return group;
-      // cubeGeom = new THREE.BoxGeometry(8, 0.9, 8);
-      // materials = new THREE.MeshBasicMaterial({ color: colors[ 0 ] });
-      // cube = new THREE.Mesh(cubeGeom, materials);
-      // cube.position.set(pos[ 0 ], pos[ 1 ], pos[ 2 ]);
-      // group.add(cube);
-      // cubeGeom = new THREE.BoxGeometry(8, 2.9, 8);
-      // materials = new THREE.MeshBasicMaterial({ color: colors[ 1 ] });
-      // cube = new THREE.Mesh(cubeGeom, materials);
-      // cube.position.set(pos[ 0 ], pos[ 1 ] + 2, pos[ 2 ]);
-      // group.add(cube);
-      // cubeGeom = new THREE.BoxGeometry(8, 0.9, 8);
-      // materials = new THREE.MeshBasicMaterial({ color: colors[ 2 ] });
-      // cube = new THREE.Mesh(cubeGeom, materials);
-      // cube.position.set(pos[ 0 ], pos[ 1 ] + 4, pos[ 2 ]);
-      // group.add(cube);
-
     }
     function init() {
 
@@ -107,6 +91,9 @@
       scene.add(cube);
       // 灰白相间的长方体
       var whitecube = createCube([ 0xFFFFFF, 0xA8A8A8, 0xA8A8A8, 0xA8A8A8, 0xFFFFFF ], [ 14, 3, 0 ]);
+      whitecube.castShadow = true;
+      // var edges = new THREE.EdgesHelper(whitecube, 0x1535f7);//设置边框，可以旋转
+      // scene.add(edges);
       var greencube = createCube([ 0x006400, 0xFFFFFF, 0xFFFFFF, 0xFFFFFF, 0x006400 ], [ 14, 3, 10 ]);
       var graycube = createCube([ 0x555555, 0xFFFFFF, 0x555555, 0xFFFFFF, 0x555555 ], [ 14, 3, 20 ]);
       scene.add(whitecube);
@@ -115,8 +102,8 @@
       // 绿白相间的长方体
 
       // position and point the camera to the center of the scene
-      camera.position.x = -30;
-      camera.position.y = 30;
+      camera.position.x = -50;
+      camera.position.y = 40;
       camera.position.z = 30;
       camera.lookAt(scene.position);
 
